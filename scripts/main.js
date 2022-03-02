@@ -105,11 +105,10 @@ class QuizApp {
   }
 
   static ResetQuiz() {
-
-
+    location.reload();
   }
 
-  
+
 }
 
 QuizApp.ShowStartBtn();
