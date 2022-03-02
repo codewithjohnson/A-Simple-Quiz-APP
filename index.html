@@ -20,14 +20,16 @@
     </nav>
 
     <div class="main mx-auto text-white " id="main">
-        <div class="quiz-subject-container text-center mt-4">
+        <div class="quiz-subject-container text-center mt-2">
             <h6 class="text-white text-opacity-25 px-2 text-sm-center">Chemistry Quiz <span class="text-info"> | CodeWithJohnson</span> </h6>
         </div>
 
-        <div class="question-number-container timer-container d-flex justify-content-between mt-4 " id="question-number-container">
-            <h6 class = " question-number text-white px-2 text-sm-center fw-lighter text-sm-large">Question<span id="current-question-count"> 01</span> /<span id="final-question-count"> 10</span></h6>
+        <div class="justify-content-center d-flex d-none mt-4 " id="start"><button type="button" class="btn btn-warning w-25">START</button></div>
 
-            <h6 class = "question-number-Time-counter text-white px-2 text-sm-center  fw-lighter text-sm-large">Time<span id="Time-counting"> 00</span> :<span id="Time-remaining"> 00</span></h6>
+        <div class="question-number-container timer-container d-flex justify-content-between mt-4 " id="question-number-container">
+            <h6 class = " question-number text-white px-3 text-sm-center fw-lighter text-sm-large">Question<span id="current-question-count"> 01</span> /<span id="final-question-count"> 10</span></h6>
+
+            <h6 class = "question-number-Time-counter text-white px-3 text-sm-center fw-bold text-sm-large">Time <span id="timer"> 08 : 00</span></h6>
          
         </div>
 
@@ -51,7 +53,7 @@
                 <hr class="mt-1 mx-2">
                 </div>
 
-                <div class="buttons d-flex justify-content-between mt-5">
+                <div class="buttons d-flex justify-content-between mt-3">
                     <button type="button" id="prev-btn" class="btn btn-warning mx-2 w-25">Prev</button>
                     <button type="button" id="next-btn" class="btn btn-info mx-2 w-25">Next</but>
                 </div>
