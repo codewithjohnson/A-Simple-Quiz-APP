@@ -9,7 +9,7 @@ const CurrentQuestionNumber = document.getElementById("Current-question-number")
 const options = document.getElementById("option");
 const PrevBtn = document.getElementById("prev-btn");
 const NextBtn = document.getElementById("next-btn");
-console.log(NextBtn);
+
 
 
 const questions = [
@@ -46,3 +46,34 @@ const questions = [
         correct: "b",
     }
 ];
+
+class QuizApp{
+    constructor(){
+
+    }
+
+    static LoadQuiz (){
+        console.log("QuizApp");
+    }
+
+    static StartTime(){
+
+    }
+    
+    static DeselectAnswers(){
+
+    }
+
+    static EvaluateAnswers(){
+
+    }
+
+    static ResetQuiz (){
+
+    }
+
+   
+}
+
+
+QuizApp.LoadQuiz();
