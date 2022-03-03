@@ -1,25 +1,20 @@
-
-
-// let Interval = setInterval(Timer,1000);
-// function Timer(){
-//     countdown.textContent = `${minutes}`;
-//     minutes--;
-//     if (minutes<0){
-//        clearInterval(Interval);
-//     }
-// }
-const countdown = document.getElementById('time');
-const time = 10;
-let timett = time*60;
-
-// const CountDown = setInterval(QuizAppTimer,100);
-function QuizAppTimer(){
-    minutes = Math.floor(timett/60);
-    seconds = timett % 60;
-    console.log(minutes,seconds);
-    timett--;
-}
-
-
+const questions = [
+    {
+      question: "Which language runs in a web browser?",
+      a: "Java",
+      b: "C",
+      c: "Python",
+      d: "JavaScript",
+      correct: "d",
+    },
+    {
+      question: "What does CSS stand for?",
+      a: "Central Style Sheets",
+      b: "Cascading Style Sheets",
+      c: "Cascading Simple Sheets",
+      d: "Cars SUVs Sailboats",
+      correct: "b",
+    },
+];
 
 

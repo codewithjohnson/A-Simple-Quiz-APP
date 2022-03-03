@@ -3,13 +3,25 @@ const QuestionNumberContainer = document.getElementById(
   "question-number-container"
 );
 const CurrentQuestionCount = document.getElementById("current-question-count");
-const FinalQuestionCount = document.getElementById("final-question-count");
 const Timer = document.getElementById("timer");
 const QuestionContainer = document.getElementById("question-container");
-const CurrentQuestionNumber = document.getElementById(
-  "Current-question-number"
-);
-const options = document.getElementById("option");
+
+// ANSWERS
+const answers = document.querySelectorAll(".option");
+
+const option1 = document.getElementById("option1");
+const option1Answer = option1.nextElementSibling;
+
+const option2 = document.getElementById("option2");
+const option2Answer = option2.nextElementSibling;
+
+const option3 = document.getElementById("option3");
+const option3Answer = option3.nextElementSibling;
+
+const option4 = document.getElementById("option4");
+const option4Answer = option4.nextElementSibling;
+
+// NEXT AND PREVIOUS BUTTON
 const start = document.getElementById("start");
 const PrevBtn = document.getElementById("prev-btn");
 const NextBtn = document.getElementById("next-btn");
@@ -58,23 +70,25 @@ class QuizApp {
     };
   }
 
-
-
   static PreloadQuiz() {
     start.addEventListener("click", () => {
       console.log("Questions will now be loaded");
       start.classList.add("d-none");
+      QuizApp.LoadQuiz();
       QuizApp.StartTimer();
     });
   }
 
-
-
   static LoadQuiz() {
-
+    let QuestionIndex = 0;
+    QuizApp.UnselectAnswers();
+    CurrentQuestionCount.innerHTML = `<span> ${QuestionIndex+1}</span>`;
+    QuestionContainer.textContent = questions[QuestionIndex].question;
+    option1Answer.textContent = questions[QuestionIndex].a;
+    option2Answer.textContent = questions[QuestionIndex].b;
+    option3Answer.textContent = questions[QuestionIndex].c;
+    option4Answer.textContent = questions[QuestionIndex].d;
   }
-
-
 
   static StartTimer() {
     const time = 8;
@@ -92,23 +106,17 @@ class QuizApp {
     }
   }
 
-
-
-  static DeselectAnswers() {
-
-
+  static UnselectAnswers() {
+    answers.forEach((answer) => {
+      answer.checked = false;
+    });
   }
 
-  static EvaluateAnswers() {
-
-
-  }
+  static EvaluateAnswers() {}
 
   static ResetQuiz() {
     location.reload();
   }
-
-
 }
 
 QuizApp.ShowStartBtn();

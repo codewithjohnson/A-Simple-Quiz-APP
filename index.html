@@ -27,31 +27,53 @@
         <div class="justify-content-center d-flex d-none mt-4 " id="start"><button type="button" class="btn btn-warning w-25">START</button></div>
 
         <div class="question-number-container timer-container d-flex justify-content-between mt-4 " id="question-number-container">
-            <h6 class = " question-number text-white px-3 text-sm-center fw-lighter text-sm-large">Question<span id="current-question-count"> 01</span> /<span id="final-question-count"> 10</span></h6>
+            <h6 class = " question-number text-white px-3 text-sm-center fw-lighter text-sm-large">Question<span id="current-question-count"> 1</span> out of<span id="final-question-count"> 10</span></h6>
 
             <h6 class = "question-number-Time-counter text-white px-3 text-sm-center fw-bold text-sm-large">Time <span id="timer"> 08 : 00</span></h6>
          
         </div>
 
-        <div class="question-container mt-4 text-white text-opacity-50 px-4 py-4 text-break text-wrap mx-2 " id="question-container"><span id="current-question-number">1.</span> 
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est deserunt voluptatibus distinctio similique ipsam perferendis impedit ab saepe, sed architecto!
-            <div class="option-container mt-5 ">
+        <div class="question-container mt-4 text-white text-opacity-50 px-4 py-4 mx-2 d-flex flex-grow flex-column">
+
+            <p id="question-container">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est deserunt voluptatibus distinctio similique ipsam perferendis impedit ab saepe, sed architecto!</p>
+            
+            <div class="option-container mt-3 ">
                 <!-- OPTION 1 -->
-                <div class="options option1"><input class="form-check-input  mx-2"   type="checkbox" id="option">Micheal Faraday
-                <hr class="mt-1 mx-2">
+                <div class="form-check">
+                    <input class="form-check-input option" type="radio" name="option" id="option1">
+                    <label class="form-check-label" for="option1" id="option1A">
+                      Micheal Johnson
+                    </label>
                 </div>
+                <hr class="mt-1 mx-2">
+
                 <!-- OPTION 2 -->
-                <div class="options option2"><input class="form-check-input  mx-2"   type="checkbox" id="option">Micheal Faraday
-                <hr class="mt-1 mx-2">
+                <div class="form-check">
+                    <input class="form-check-input option" type="radio" name="option" id="option2">
+                    <label class="form-check-label" for="option1" id="option2A">
+                      Micheal Johnson
+                    </label>
                 </div>
+                <hr class="mt-1 mx-2">
+
                 <!-- OPTION 3 -->
-                <div class="options option3"><input class="form-check-input  mx-2"   type="checkbox" id="option">Micheal Faraday
-                <hr class="mt-1 mx-2">
+                <div class="form-check">
+                    <input class="form-check-input option" type="radio" name="option" id="option3">
+                    <label class="form-check-label" for="option1" id="option3A">
+                      Micheal Johnson
+                    </label>
                 </div>
+                <hr class="mt-1 mx-2">
+
                 <!-- OPTION 4 -->
-                <div class="options option4"><input class="form-check-input  mx-2"   type="checkbox" id="option">Micheal Faraday
-                <hr class="mt-1 mx-2">
+                <div class="form-check">
+                    <input class="form-check-input option" type="radio" name="option" id="option4">
+                    <label class="form-check-label" for="option1" id="option4A">
+                      Micheal Johnson
+                    </label>
                 </div>
+                <hr class="mt-1 mx-2">
+
 
                 <div class="buttons d-flex justify-content-between mt-3">
                     <button type="button" id="prev-btn" class="btn btn-warning mx-2 w-25">Prev</button>

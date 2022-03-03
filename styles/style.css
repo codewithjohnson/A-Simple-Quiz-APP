@@ -8,9 +8,8 @@
     font-size: 16px;
 }
 
-#option{
-    background-color: #0e7490;
-   
+#option1,#option2,#option3,#option4{
+    background-color: #06c5e2;
 }
 
 .question-container{
