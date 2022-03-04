@@ -24,7 +24,9 @@ const option4Answer = option4.nextElementSibling;
 // NEXT AND PREVIOUS BUTTON
 const start = document.getElementById("start");
 const PrevBtn = document.getElementById("prev-btn");
+const ResetBtn = document.getElementById("reset-btn");
 const NextBtn = document.getElementById("next-btn");
+
 
 const questions = [
   {
@@ -67,11 +69,13 @@ class QuizApp {
   static ShowStartBtn() {
     window.onload = function () {
       start.classList.remove("d-none");
+
     };
   }
 
   static PreloadQuiz() {
     start.addEventListener("click", () => {
+      QuestionNumberContainer.classList.remove("d-none");
       console.log("Questions will now be loaded");
       start.classList.add("d-none");
       QuizApp.LoadQuiz();
@@ -115,9 +119,12 @@ class QuizApp {
   static EvaluateAnswers() {}
 
   static ResetQuiz() {
-    location.reload();
+    ResetBtn.addEventListener('click',()=>{
+      location.reload();
+    });
   }
 }
 
 QuizApp.ShowStartBtn();
 QuizApp.PreloadQuiz();
+QuizApp.ResetQuiz();

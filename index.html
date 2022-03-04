@@ -26,7 +26,7 @@
 
         <div class="justify-content-center d-flex d-none mt-4 " id="start"><button type="button" class="btn btn-warning w-25">START</button></div>
 
-        <div class="question-number-container timer-container d-flex justify-content-between mt-4 " id="question-number-container">
+        <div class="question-number-container timer-container d-flex justify-content-between mt-4 d-none " id="question-number-container">
             <h6 class = " question-number text-white px-3 text-sm-center fw-lighter text-sm-large">Question<span id="current-question-count"> 1</span> out of<span id="final-question-count"> 10</span></h6>
 
             <h6 class = "question-number-Time-counter text-white px-3 text-sm-center fw-bold text-sm-large">Time <span id="timer"> 08 : 00</span></h6>
@@ -77,6 +77,9 @@
 
                 <div class="buttons d-flex justify-content-between mt-3">
                     <button type="button" id="prev-btn" class="btn btn-warning mx-2 w-25">Prev</button>
+
+                    <button type="button" id="reset-btn" class="btn btn-outline-danger mx-2 w-25">Reset</button>
+
                     <button type="button" id="next-btn" class="btn btn-info mx-2 w-25">Next</but>
                 </div>
                
