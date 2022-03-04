@@ -21,6 +21,7 @@ const option3Answer = option3.nextElementSibling;
 const option4 = document.getElementById("option4");
 const option4Answer = option4.nextElementSibling;
 
+
 // NEXT AND PREVIOUS BUTTON
 const start = document.getElementById("start");
 const PrevBtn = document.getElementById("prev-btn");
@@ -64,8 +65,7 @@ const questions = [
 ];
 
 let QuestionIndex = 0;
-
-
+let QuizScore = 0;
 
 class QuizApp {
   constructor() {}
@@ -73,7 +73,6 @@ class QuizApp {
   static ShowStartBtn() {
     window.onload = function () {
       start.classList.remove("d-none");
-
     };
   }
 
@@ -89,11 +88,9 @@ class QuizApp {
   }
 
   static UnselectAnswers() {
-    answers.forEach((answer) => {
-      answer.checked = false;
-    });
-  }
-
+    answers.forEach(answer => {answer.checked = false; });
+    }
+  
   static LoadQuiz() {
     QuizApp.UnselectAnswers();
     CurrentQuestionCount.innerHTML = `<span> ${QuestionIndex+1}</span>`;
@@ -120,10 +117,22 @@ class QuizApp {
     }
   }
 
-  static EvaluateAnswers() {}
+  static EvaluateAnswers() {
+    answers.forEach(answer =>{
+      if(answer.checked){
+        let PickedAnswer = answer.nextElementSibling;
+        const CurrentAnswer = questions[QuestionIndex].correct;
+        if(PickedAnswer.classList.contains(CurrentAnswer)){
+          QuizScore++;
+          console.log(QuizScore);
+        }
+      }
+    });
+  }
 
   static NextQuestion() {
     NextBtn.addEventListener('click',()=>{
+      QuizApp.EvaluateAnswers();
         QuestionIndex++;
         if (QuestionIndex > questions.length){
           return;
@@ -137,6 +146,7 @@ class QuizApp {
 
   static PreviousQuestion() {
     PrevBtn.addEventListener('click',()=>{
+      QuizScore--;
       QuestionIndex--;
       if(QuestionIndex<0){
         return;
