@@ -24,7 +24,12 @@
             <h6 class="text-white text-opacity-25 px-2 text-sm-center">Chemistry Quiz <span class="text-info"> | CodeWithJohnson</span> </h6>
         </div>
 
-        <div class="justify-content-center d-flex d-none mt-4 " id="start"><button type="button" class="btn btn-warning">START QUIZ</button></div>
+       <div class="up d-flex justify-content-between">
+
+        <div class=" mt-4 mx-4 " id="reset-btn"><button type="button" class="btn btn-danger">Reset</button></div>
+
+        <div class="d-none mt-4 mx-4 " id="start"><button type="button" class="btn btn-warning">Start</button></div>
+       </div>
 
         <div class="question-number-container timer-container d-flex justify-content-between mt-4 d-none " id="question-number-container">
             <h6 class = " question-number text-white px-3 text-sm-center fw-lighter text-sm-large">Question<span id="current-question-count"> 1</span> out of<span id="final-question-count"> 10</span></h6>
@@ -78,9 +83,9 @@
                 <div class="buttons d-flex justify-content-between mt-5">
                     <button type="button" id="prev-btn" class="btn btn-warning mx-2">Prev</button>
 
-                    <button type="button" id="reset-btn" class="btn btn-outline-danger mx-2">Reset</button>
+                    <button type="button" id="submit" class="btn btn-outline-success mx-2">Submit</button>
 
-                    <button type="button" id="next-btn" class="btn btn-info mx-2">Next</but>
+                    <button type="button" id="next-btn" class="btn btn-info mx-2">Next</button>
                 </div>
                
 
