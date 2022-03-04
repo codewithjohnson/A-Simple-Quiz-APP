@@ -80,10 +80,11 @@ class QuizApp {
   static PreloadQuiz() {
     start.addEventListener("click", () => {
       QuestionNumberContainer.classList.remove("d-none");
-      console.log("Questions will now be loaded");
       start.classList.add("d-none");
       QuizApp.LoadQuiz();
       QuizApp.StartTimer();
+      QuizApp.PreviousQuestion();
+      QuizApp.NextQuestion();
     });
   }
 
@@ -123,15 +124,27 @@ class QuizApp {
 
   static NextQuestion() {
     NextBtn.addEventListener('click',()=>{
-      QuestionIndex++;
-      QuizApp.LoadQuiz();
+        QuestionIndex++;
+        if (QuestionIndex > questions.length){
+          return;
+        }
+        else{
+          QuizApp.LoadQuiz();
+        }
+       
     });
   }
 
   static PreviousQuestion() {
     PrevBtn.addEventListener('click',()=>{
       QuestionIndex--;
-      QuizApp.LoadQuiz();
+      if(QuestionIndex<0){
+        return;
+      }
+      else{
+        QuizApp.LoadQuiz();
+      }
+      
     });
   }
 
@@ -145,6 +158,4 @@ class QuizApp {
 
 QuizApp.ShowStartBtn();
 QuizApp.PreloadQuiz();
-QuizApp.PreviousQuestion();
-QuizApp.NextQuestion();
 QuizApp.ResetQuiz();
