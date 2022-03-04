@@ -94,7 +94,6 @@ class QuizApp {
     answers.forEach(answer => {answer.checked = false; });
     }
   
-
   static LoadQuiz() {
     QuizApp.UnselectAnswers();
     CurrentQuestionCount.innerHTML = `<span> ${QuestionIndex+1}</span>`;
