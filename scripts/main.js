@@ -67,12 +67,15 @@ const questions = [
 let QuestionIndex = 0;
 let QuizScore = 0;
 
+
+
 class QuizApp {
   constructor() {}
 
   static ShowStartBtn() {
     window.onload = function () {
       start.classList.remove("d-none");
+
     };
   }
 
@@ -91,6 +94,7 @@ class QuizApp {
     answers.forEach(answer => {answer.checked = false; });
     }
   
+
   static LoadQuiz() {
     QuizApp.UnselectAnswers();
     CurrentQuestionCount.innerHTML = `<span> ${QuestionIndex+1}</span>`;
@@ -125,6 +129,7 @@ class QuizApp {
         if(PickedAnswer.classList.contains(CurrentAnswer)){
           QuizScore++;
           console.log(QuizScore);
+          
         }
       }
     });
@@ -132,12 +137,12 @@ class QuizApp {
 
   static NextQuestion() {
     NextBtn.addEventListener('click',()=>{
-      QuizApp.EvaluateAnswers();
-        QuestionIndex++;
         if (QuestionIndex > questions.length){
-          return;
+          return false;
         }
         else{
+          QuizApp.EvaluateAnswers();
+          QuestionIndex++;
           QuizApp.LoadQuiz();
         }
        
