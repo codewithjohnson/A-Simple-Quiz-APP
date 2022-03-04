@@ -63,6 +63,10 @@ const questions = [
   },
 ];
 
+let QuestionIndex = 0;
+
+
+
 class QuizApp {
   constructor() {}
 
@@ -83,8 +87,13 @@ class QuizApp {
     });
   }
 
+  static UnselectAnswers() {
+    answers.forEach((answer) => {
+      answer.checked = false;
+    });
+  }
+
   static LoadQuiz() {
-    let QuestionIndex = 0;
     QuizApp.UnselectAnswers();
     CurrentQuestionCount.innerHTML = `<span> ${QuestionIndex+1}</span>`;
     QuestionContainer.textContent = questions[QuestionIndex].question;
@@ -110,13 +119,22 @@ class QuizApp {
     }
   }
 
-  static UnselectAnswers() {
-    answers.forEach((answer) => {
-      answer.checked = false;
+  static EvaluateAnswers() {}
+
+  static NextQuestion() {
+    NextBtn.addEventListener('click',()=>{
+      QuestionIndex++;
+      QuizApp.LoadQuiz();
     });
   }
 
-  static EvaluateAnswers() {}
+  static PreviousQuestion() {
+    PrevBtn.addEventListener('click',()=>{
+      QuestionIndex--;
+      QuizApp.LoadQuiz();
+    });
+  }
+
 
   static ResetQuiz() {
     ResetBtn.addEventListener('click',()=>{
@@ -127,4 +145,6 @@ class QuizApp {
 
 QuizApp.ShowStartBtn();
 QuizApp.PreloadQuiz();
+QuizApp.PreviousQuestion();
+QuizApp.NextQuestion();
 QuizApp.ResetQuiz();
