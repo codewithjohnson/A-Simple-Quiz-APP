@@ -137,12 +137,13 @@ class QuizApp {
 
   static NextQuestion() {
     NextBtn.addEventListener('click',()=>{
+        QuizApp.EvaluateAnswers();
         if (QuestionIndex > questions.length - 2){
           NextBtn.hidden = true;
           return;
         }
         else{
-          QuizApp.EvaluateAnswers();
+          console.log(QuizScore);
           QuestionIndex++;
           QuizApp.LoadQuiz();
         }
