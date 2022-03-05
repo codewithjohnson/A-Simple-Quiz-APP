@@ -130,8 +130,6 @@ class QuizApp {
         const CurrentAnswer = questions[QuestionIndex].correct;
         if(PickedAnswer.classList.contains(CurrentAnswer)){
           QuizScore++;
-          console.log(QuizScore);
-          
         }
       }
     });
@@ -139,8 +137,9 @@ class QuizApp {
 
   static NextQuestion() {
     NextBtn.addEventListener('click',()=>{
-        if (QuestionIndex > questions.length){
-          return false;
+        if (QuestionIndex > questions.length - 2){
+          NextBtn.hidden = true;
+          return;
         }
         else{
           QuizApp.EvaluateAnswers();
@@ -153,12 +152,12 @@ class QuizApp {
 
   static PreviousQuestion() {
     PrevBtn.addEventListener('click',()=>{
-      QuizScore--;
-      QuestionIndex--;
-      if(QuestionIndex<0){
+      if(QuestionIndex<=0){
         return;
       }
       else{
+        QuestionIndex--;
+        QuizScore--;
         QuizApp.LoadQuiz();
       }
       
@@ -194,4 +193,3 @@ QuizApp.PreloadQuiz();
 QuizApp.ResetQuiz();
 QuizApp.SubmitQuiz();
 QuizApp.RestartQuiz();
-// main.hidden = true;
