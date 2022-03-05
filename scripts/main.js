@@ -33,6 +33,7 @@ const SubmitBtn = document.getElementById("submit-btn");
 const ResultCustom = document.getElementById("ResultCustom");
 const restart = document.getElementById("restart");
 const UnhideResultContainer = document.getElementById("ResultContainer");
+const TotalNumberOfQuestions = document.getElementById("final-question-count");
 
 let QuestionIndex = 0;
 let QuizScore = 0;
@@ -66,6 +67,7 @@ class QuizApp {
     QuizApp.UnselectAnswers();
     CurrentQuestionCount.innerHTML = `<span> ${QuestionIndex+1}</span>`;
     QuestionContainer.textContent = questions[QuestionIndex].question;
+    TotalNumberOfQuestions.innerHTML =`<span> ${questions.length}</span>`;
     option1Answer.textContent = questions[QuestionIndex].a;
     option2Answer.textContent = questions[QuestionIndex].b;
     option3Answer.textContent = questions[QuestionIndex].c;
