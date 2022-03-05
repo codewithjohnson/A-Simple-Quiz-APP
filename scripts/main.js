@@ -28,6 +28,7 @@ const PrevBtn = document.getElementById("prev-btn");
 const ResetBtn = document.getElementById("reset-btn");
 const NextBtn = document.getElementById("next-btn");
 const SubmitBtn = document.getElementById("submit-btn");
+const ResultCustom = document.getElementById("ResultCustom");
 
 const questions = [
   {
@@ -168,6 +169,7 @@ class QuizApp {
       NextBtn.hidden = true;
       start.hidden = true;
       main.hidden = true;
+      ResultCustom.innerHTML = `${QuizScore}`;
     });
   }
 
@@ -181,5 +183,5 @@ class QuizApp {
 QuizApp.ShowStartBtn();
 QuizApp.PreloadQuiz();
 QuizApp.ResetQuiz();
-// QuizApp.SubmitQuiz();
-main.hidden = true;
+QuizApp.SubmitQuiz();
+// main.hidden = true;
