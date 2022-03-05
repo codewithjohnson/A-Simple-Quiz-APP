@@ -162,7 +162,5 @@ QuizApp.ResetQuiz();
 QuizApp.SubmitQuiz();
 QuizApp.RestartQuiz();
 
-console.log(questions.length);
-
 
 
