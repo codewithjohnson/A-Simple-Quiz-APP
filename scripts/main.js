@@ -1,3 +1,5 @@
+import {questions} from "../test.js";
+
 const main = document.getElementById("main");
 const QuestionNumberContainer = document.getElementById(
   "question-number-container"
@@ -32,45 +34,8 @@ const ResultCustom = document.getElementById("ResultCustom");
 const restart = document.getElementById("restart");
 const UnhideResultContainer = document.getElementById("ResultContainer");
 
-const questions = [
-  {
-    question: "Which language runs in a web browser?",
-    a: "Java",
-    b: "C",
-    c: "Python",
-    d: "JavaScript",
-    correct: "d",
-  },
-  {
-    question: "What does CSS stand for?",
-    a: "Central Style Sheets",
-    b: "Cascading Style Sheets",
-    c: "Cascading Simple Sheets",
-    d: "Cars SUVs Sailboats",
-    correct: "b",
-  },
-  {
-    question: "What does HTML stand for?",
-    a: "Hypertext Markup Language",
-    b: "Hypertext Markdown Language",
-    c: "Hyperloop Machine Language",
-    d: "Helicopters Terminals Motorboats Lamborginis",
-    correct: "a",
-  },
-  {
-    question: "What year was JavaScript launched?",
-    a: "1996",
-    b: "1995",
-    c: "1994",
-    d: "none of the above",
-    correct: "b",
-  },
-];
-
 let QuestionIndex = 0;
 let QuizScore = 0;
-
-
 
 class QuizApp {
   constructor() {}
@@ -143,7 +108,7 @@ class QuizApp {
           return;
         }
         else{
-          console.log(QuizScore);
+          // console.log(QuizScore);
           QuestionIndex++;
           QuizApp.LoadQuiz();
         }
@@ -194,3 +159,6 @@ QuizApp.PreloadQuiz();
 QuizApp.ResetQuiz();
 QuizApp.SubmitQuiz();
 QuizApp.RestartQuiz();
+
+
+
