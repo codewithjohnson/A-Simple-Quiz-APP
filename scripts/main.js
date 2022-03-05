@@ -1,4 +1,4 @@
-import {questions} from "../test.js";
+import {questions} from "./test.js";
 
 const main = document.getElementById("main");
 const QuestionNumberContainer = document.getElementById(
