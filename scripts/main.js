@@ -164,7 +164,10 @@ class QuizApp {
 
   static SubmitQuiz(){
     SubmitBtn.addEventListener('click',()=>{
-      console.log('Submit Quiz');
+      PrevBtn.hidden = true;
+      NextBtn.hidden = true;
+      start.hidden = true;
+      // SubmitBtn.style.alignSelf = "center";
     });
   }
 
