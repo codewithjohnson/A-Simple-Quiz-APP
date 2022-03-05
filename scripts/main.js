@@ -181,4 +181,5 @@ class QuizApp {
 QuizApp.ShowStartBtn();
 QuizApp.PreloadQuiz();
 QuizApp.ResetQuiz();
-QuizApp.SubmitQuiz();
+// QuizApp.SubmitQuiz();
+main.hidden = true;
