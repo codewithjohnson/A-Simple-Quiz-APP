@@ -27,7 +27,7 @@ const start = document.getElementById("start");
 const PrevBtn = document.getElementById("prev-btn");
 const ResetBtn = document.getElementById("reset-btn");
 const NextBtn = document.getElementById("next-btn");
-
+const SubmitBtn = document.getElementById("submit-btn");
 
 const questions = [
   {
@@ -162,6 +162,11 @@ class QuizApp {
     });
   }
 
+  static SubmitQuiz(){
+    SubmitBtn.addEventListener('click',()=>{
+      console.log('Submit Quiz');
+    });
+  }
 
   static ResetQuiz() {
     ResetBtn.addEventListener('click',()=>{
@@ -173,3 +178,4 @@ class QuizApp {
 QuizApp.ShowStartBtn();
 QuizApp.PreloadQuiz();
 QuizApp.ResetQuiz();
+QuizApp.SubmitQuiz();
