@@ -167,7 +167,7 @@ class QuizApp {
       PrevBtn.hidden = true;
       NextBtn.hidden = true;
       start.hidden = true;
-      // SubmitBtn.style.alignSelf = "center";
+      main.hidden = true;
     });
   }
 
