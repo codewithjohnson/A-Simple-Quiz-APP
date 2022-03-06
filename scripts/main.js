@@ -138,6 +138,7 @@ class QuizApp {
       NextBtn.hidden = true;
       start.hidden = true;
       main.hidden = true;
+      QuizApp.EvaluateAnswers();
       UnhideResultContainer.classList.remove('d-none');
       ResultCustom.innerHTML = `${QuizScore}`;
     });
